@@ -39,12 +39,26 @@ const config = {
         test: /\.html$/,
         use: 'raw-loader',
       },
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: ['@angular/compiler-cli/linker/babel'],
+            compact: false,
+            cacheDirectory: true,
+          },
+        },
+      },
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+    alias: {
+      'downgraded-ng12': path.resolve('./dist/downgraded-ng12'),
+    },
   },
 };
 

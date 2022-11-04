@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-downgraded-ng12',
+  selector: 'downgraded-ng12',
   template: `
     <p>
       downgraded-ng12 works!
