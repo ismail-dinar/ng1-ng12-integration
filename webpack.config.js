@@ -13,6 +13,7 @@ const config = {
   devServer: {
     open: true,
     host: 'localhost',
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -41,6 +42,7 @@ const config = {
       },
       {
         test: /\.js$/,
+        include: [path.join(process.cwd(), 'dist/downgraded-ng12')],
         use: {
           loader: 'babel-loader',
           options: {
