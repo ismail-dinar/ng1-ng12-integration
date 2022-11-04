@@ -26,7 +26,10 @@ const MODULE_NAME = 'app';
 
 angular
   .module(MODULE_NAME, [downgradeModule(ng2BootstrapFn)])
-  .directive('downgraded-ng12', downgradeComponent({ component: DowngradedNg12Component }))
+  .directive(
+    'downgradedNg12',
+    downgradeComponent({ component: DowngradedNg12Component })
+  )
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
 
